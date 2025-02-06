@@ -4,7 +4,7 @@
 
   # GLOBAL
   globals.mapleader = " ";
-  
+
   opts = {
     number = true;
 
@@ -16,19 +16,19 @@
   };
 
   extraConfigLua = ''
-      -- Add default mappings for 's' and 'S'
-      vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap-forward-to)')
-      vim.keymap.set({'n', 'x', 'o'}, 'S', '<Plug>(leap-backward-to)')
+    -- Add default mappings for 's' and 'S'
+    vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap-forward-to)')
+    vim.keymap.set({'n', 'x', 'o'}, 'S', '<Plug>(leap-backward-to)')
 
-      vim.keymap.set({'v'}, 's', '<Plug>(leap-forward-till)')
-      vim.keymap.set({'v'}, 'S', '<Plug>(leap-backward-till)')
-    '';
+    vim.keymap.set({'v'}, 's', '<Plug>(leap-forward-till)')
+    vim.keymap.set({'v'}, 'S', '<Plug>(leap-backward-till)')
+  '';
 
   # KEYMAPS
   keymaps = [
     # pasting from system clipboard
     {
-      action = "\"*p";
+      action = ''"*p'';
       key = "<leader>p";
       options = { desc = "[P]aste from system clipboard"; };
     }
@@ -47,7 +47,7 @@
     {
       action = "<C-\\><C-n>";
       key = "<Esc><Esc>";
-      mode = ["t"];
+      mode = [ "t" ];
       options = { desc = "Escape terminal mode"; };
     }
 
@@ -167,11 +167,11 @@
       action = "+code";
       options = { desc = "[C]ode actions"; };
     }
-		{
-			key = "<leader>ca";
-			action = "<CMD>lua require('actions-preview').code_actions<CR>";
-			options = { desc = "[C]ode [a]ction"; };
-		}
+    {
+      key = "<leader>ca";
+      action = "<CMD>lua require('actions-preview').code_actions<CR>";
+      options = { desc = "[C]ode [a]ction"; };
+    }
     {
       key = "<leader>cf";
       action = "<CMD>lua vim.lsp.buf.format()<CR>";
@@ -197,55 +197,54 @@
       action = "<CMD>Trouble todo toggle<CR>";
       options = { desc = "[C]ode [t]odo toggle"; };
     }
-		# copilot
-		{
-			mode = "n";
-			key = "<leader>h";
-			action = "+copilot";
-			options = { desc = "Copilot [h]elp"; };
-		}
-		{
-			key = "<leader>hc";
-			action = "<cmd>CopilotChatToggle<CR>";
-			options = { desc = "Copilot [h]elp [c]hat"; };
-		}
-		{
-			key = "<leader>he";
-			action = "<cmd>CopilotChatExplain<CR>";
-			options = { desc = "Copilot [h]elp [e]xplain"; };
-		}
-		{
-			key = "<leader>hr";
-			action = "<cmd>CopilotChatReview<CR>";
-			options = { desc = "Copilot [h]elp [r]eview"; };
-		}
-		{
-			key = "<leader>hf";
-			action = "<cmd>CopilotChatFix<CR>";
-			options = { desc = "Copilot [h]elp [f]ix"; };
-		}
-		{
-			key = "<leader>ho";
-			action = "<cmd>CopilotChatOptimize<CR>";
-			options = { desc = "Copilot [h]elp [o]ptimize"; };
-		}
-		{
-			key = "<leader>hd";
-			action = "<cmd>CopilotChatDocs<CR>";
-			options = { desc = "Copilot [h]elp [d]ocs"; };
-		}
-		{
-			key = "<leader>ht";
-			action = "<cmd>CopilotChatTests<CR>";
-			options = { desc = "Copilot [h]elp [t]ests"; };
-		}
-		{
-			key = "<leader>hx";
-			action = "<cmd>CopilotChatFixDiagnostic<CR>";
-			options = { desc = "Copilot [h]elp [x] fix diagnostic"; };
-		}
-];
-
+    # copilot
+    {
+      mode = "n";
+      key = "<leader>h";
+      action = "+copilot";
+      options = { desc = "Copilot [h]elp"; };
+    }
+    {
+      key = "<leader>hc";
+      action = "<cmd>CopilotChatToggle<CR>";
+      options = { desc = "Copilot [h]elp [c]hat"; };
+    }
+    {
+      key = "<leader>he";
+      action = "<cmd>CopilotChatExplain<CR>";
+      options = { desc = "Copilot [h]elp [e]xplain"; };
+    }
+    {
+      key = "<leader>hr";
+      action = "<cmd>CopilotChatReview<CR>";
+      options = { desc = "Copilot [h]elp [r]eview"; };
+    }
+    {
+      key = "<leader>hf";
+      action = "<cmd>CopilotChatFix<CR>";
+      options = { desc = "Copilot [h]elp [f]ix"; };
+    }
+    {
+      key = "<leader>ho";
+      action = "<cmd>CopilotChatOptimize<CR>";
+      options = { desc = "Copilot [h]elp [o]ptimize"; };
+    }
+    {
+      key = "<leader>hd";
+      action = "<cmd>CopilotChatDocs<CR>";
+      options = { desc = "Copilot [h]elp [d]ocs"; };
+    }
+    {
+      key = "<leader>ht";
+      action = "<cmd>CopilotChatTests<CR>";
+      options = { desc = "Copilot [h]elp [t]ests"; };
+    }
+    {
+      key = "<leader>hx";
+      action = "<cmd>CopilotChatFixDiagnostic<CR>";
+      options = { desc = "Copilot [h]elp [x] fix diagnostic"; };
+    }
+  ];
 
   # COLORSCHEMES
   colorschemes = {
@@ -264,12 +263,10 @@
   # PLUGINS
   plugins = {
     # UI
-    noice = {
-      enable = true;
-    };
+    noice = { enable = true; };
     nvim-tree = {
       enable = true;
-      
+
       openOnSetup = true;
       disableNetrw = true;
       hijackNetrw = true;
@@ -317,9 +314,7 @@
     };
     yanky = {
       enable = true;
-      settings = {
-        system_clipboard.sync_with_ring = true;
-      };
+      settings = { system_clipboard.sync_with_ring = true; };
     };
     nvim-autopairs.enable = true;
     nvim-surround.enable = true;
@@ -329,13 +324,13 @@
       enable = true;
       autoEnableSources = true;
       settings.sources = [
-        {name = "nvim_lsp";}
-        {name = "treesitter";}
-        {name = "luasnip";}
-        {name = "emmet";}
-        {name = "tailwindcss";}
-        {name = "path";}
-        {name = "buffer";}
+        { name = "nvim_lsp"; }
+        { name = "treesitter"; }
+        { name = "luasnip"; }
+        { name = "emmet"; }
+        { name = "tailwindcss"; }
+        { name = "path"; }
+        { name = "buffer"; }
       ];
 
       settings.snippet.expand = ''
@@ -347,61 +342,61 @@
       settings.mapping = {
         "<CR>" = "cmp.mapping.confirm({ select = true })";
         "<Down>" = ''
-            function(fallback)
-              if cmp and cmp.visible() then
-                cmp.select_next_item()
-              elseif luasnip and luasnip.expandable() then
-                luasnip.expand()
-              elseif luasnip and luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-              elseif check_backspace and check_backspace() then
-                fallback()
-              else
-                fallback()
-              end
+          function(fallback)
+            if cmp and cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip and luasnip.expandable() then
+              luasnip.expand()
+            elseif luasnip and luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            elseif check_backspace and check_backspace() then
+              fallback()
+            else
+              fallback()
             end
-          '';
+          end
+        '';
         "<Up>" = ''
-            function(fallback)
-              if cmp and cmp.visible() then
-                cmp.select_prev_item()
-              elseif luasnip and luasnip.expandable() then
-                luasnip.expand()
-              elseif luasnip and luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-              elseif check_backspace and check_backspace() then
-                fallback()
-              else
-                fallback()
-              end
+          function(fallback)
+            if cmp and cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip and luasnip.expandable() then
+              luasnip.expand()
+            elseif luasnip and luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            elseif check_backspace and check_backspace() then
+              fallback()
+            else
+              fallback()
             end
-          '';
+          end
+        '';
         "<Tab>" = ''
-            function(fallback)
-              if require("luasnip").expand_or_jumpable() then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-              else
-                fallback()
-              end
+          function(fallback)
+            if require("luasnip").expand_or_jumpable() then
+              vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+            else
+              fallback()
             end
-          '';
+          end
+        '';
         "<S-Tab>" = ''
-            function(fallback)
-              if require("luasnip").jumpable(-1) then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-              else
-                fallback()
-              end
+          function(fallback)
+            if require("luasnip").jumpable(-1) then
+              vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+            else
+              fallback()
             end
-          '';
+          end
+        '';
       };
     };
-		copilot-vim = {
-			enable = true;
-		};
-		copilot-chat = {
-			enable = true;
-		};
+    # copilot-vim = {
+    # 	enable = true;
+    # };
+    # copilot-chat = {
+    # 	enable = true;
+    # };
     friendly-snippets.enable = true;
     luasnip.enable = true;
 
@@ -411,9 +406,7 @@
 
       settings = {
         auto_install = true;
-        ensure_installed = [
-          "markdown"
-        ];
+        ensure_installed = [ "markdown" ];
       };
     };
 
@@ -422,7 +415,7 @@
       servers = {
         arduino_language_server.enable = true;
         clangd.enable = true;
-				omnisharp.enable = true;
+        omnisharp.enable = true;
         cssls.enable = true;
         emmet_ls.enable = true;
         html.enable = true;
@@ -431,7 +424,7 @@
         lua-ls.enable = true;
         pyright.enable = true;
         ruff.enable = true;
-				ruff-lsp.enable = true;
+        ruff-lsp.enable = true;
         tsserver.enable = true;
         tailwindcss.enable = true;
         vuels.enable = true;
@@ -462,15 +455,15 @@
             end
           '';
         formatters_by_ft = {
-					python = [ "isort" "black" "ruff_fix" "ruff_format" ];
-					lua = [ "stylua" ];
-					javascript = [ "prettier" ];
-					typescript = [ "prettier" ];
-					html = [ "prettier" ];
-					css = [ "prettier" ];
-					nix = [ "nixfmt" ];
-					csharp = [ "omnisharp" ];
-				};
+          python = [ "isort" "black" "ruff_fix" "ruff_format" ];
+          lua = [ "stylua" ];
+          javascript = [ "prettier" ];
+          typescript = [ "prettier" ];
+          html = [ "prettier" ];
+          css = [ "prettier" ];
+          nix = [ "nixfmt" ];
+          csharp = [ "omnisharp" ];
+        };
       };
     };
     render-markdown.enable = true;
